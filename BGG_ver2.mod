@@ -113,7 +113,7 @@ set_param_value('pm_ss',pm_ss);
 
 model;
 1/C-lambd=0;
-zeta/M-lambd+bet*lambd/pi(+1)=0;
+zeta/M-lambd+bet*lambd(+1)/pi(+1)=0;
 -lambd+bet*lambd(+1)*R=0;
 -xi/(1-H)+lambd*w=0;
 F=normcdf(log(omegabar)/sigm+sigm/2);
@@ -126,7 +126,7 @@ L=Q*K/N;                        %资本存量是状态变量，净资产是状�
 (Gamma-mu*G)*S=1-1/L;
 V=(1-Gamma)*S*R*Q*K;           %资本存量是状态变量
 Ce=(1-gamma_e)*V;
-N=gamma_e*V(-1)+He(-1)*we(-1); %企业家净资产是状态变量
+N=gamma_e*V+He*we; %企业家净资产是状态变量
 Ye=A*K(-1)^alph*(H^Omega*He^(1-Omega))^(1-alph); %资本存量是状态变量
 w*H=(1-alph)*Omega*pm*Ye;
 we*He=(1-alph)*(1-Omega)*pm*Ye;
@@ -141,7 +141,7 @@ Ye=D*Y;
 D=thet*pi^epsilon*D(-1)+(1-thet)*pistar^(-epsilon);
 Y=C+Ce+I+chi/2*(I/K(-1)-delt)^2*K(-1)+mu*G*Rk*Q(-1)*K(-1); %资本存量是状态变量
 R=in/pi(+1);
-log(in/steady_state(in))=rho*log(in/steady_state(in))+(1-rho)*phipi*log(pi/steady_state(pi))+epsr;
+log(in/steady_state(in))=rho*log(in/steady_state(in))+phipi*log(pi/steady_state(pi))+epsr;
 log(A)=rhoa*log(A(-1))+epsa;
 He=1;
 Gammap=1-F;
